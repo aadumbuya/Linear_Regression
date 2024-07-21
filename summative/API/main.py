@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import pickle
+import joblib
 import numpy as np
 
 # Load the model
 with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+    model = joblib.load(f)
 
 # Define the input data model
 class PredictionInput(BaseModel):
